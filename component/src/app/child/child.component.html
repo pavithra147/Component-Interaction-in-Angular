@@ -1,0 +1,10 @@
+<h1>Child Component</h1>
+<h2><i>Name from the Parent Component "{{fromParent}}"</i></h2>
+<button (click)="newItem()">from child</button>
+<br>
+<br>
+
+<!--adding an item to  a parent component array from child component-->
+  <label for="item">Add an item</label>
+  <input type="text" id="item" #name />
+  <button (click)="newOne(name.value)">Add to a parent's list</button>   

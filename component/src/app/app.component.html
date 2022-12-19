@@ -1,0 +1,11 @@
+<h1>Parent Component</h1>
+<!--from parent to child-->
+<app-child [fromParent]="name" (item)="msgfromchild=$event" (nameOfItem)="newOneInParent($event)"></app-child>
+<h1>PARENT COMPONENT</h1>
+<p>Message from child (when clicking the button in child component) <i>"{{msgfromchild}}"</i></p>
+
+<!-- <app-child (nameOfItem)="newOneInParent($event)"></app-child> -->
+<h1>PARENT COMPONENT</h1>
+<ul>
+    <li *ngFor="let item of names">{{item}}</li>  <!--*ngFor iterates over the names in the names array-->
+</ul>
