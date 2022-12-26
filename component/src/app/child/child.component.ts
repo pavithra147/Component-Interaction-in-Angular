@@ -27,8 +27,7 @@ export class ChildComponent implements OnInit {
     this.nameOfItem.emit(value);
   }
 
-  //Using @Input and @output together
-  @Input() itemFromParent!:'';
+ 
   
 
 }
