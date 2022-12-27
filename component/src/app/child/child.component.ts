@@ -1,12 +1,14 @@
 import { outputAst } from '@angular/compiler';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnInit {
+export class ChildComponent implements OnInit,OnChanges,OnDestroy {
 @Input() fromParent!: string;
 @Output()  item= new EventEmitter<string>();
 // output decorator is used to pass data from child to parent "item " is the name of output decorator 
@@ -16,9 +18,19 @@ export class ChildComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(){
+    console.log("component initiated");
+     
+   }
 
+   ngOnDestroy(){
+    console.log("component Destroyed");
+   }
+   ngOnChanges() {
+    console.log("on changes");
+     
+   }
+  
   newItem(){
     this.item.emit("Hello, everybody"); //emit is used to emit data from child to parent
   }
