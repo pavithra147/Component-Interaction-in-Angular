@@ -31,7 +31,7 @@ export class ChildComponent implements OnInit,OnChanges,OnDestroy {
      
    }
   
-  newItem(){
+  public newItem() : void {
     this.item.emit("Hello, everybody"); //emit is used to emit data from child to parent
   }
 
